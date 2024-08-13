@@ -147,6 +147,14 @@ public class StringManager {
             str = null;
         }
 
+        if(str != null){
+            try{
+                /**中文转码以解决乱码问题*/
+                str = new String(str.getBytes("ISO-8859-1"),"UTF-8");
+            }catch (Exception e){
+            }
+        }
+
         return str;
     }
 
